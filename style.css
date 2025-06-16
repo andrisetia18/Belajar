@@ -10,9 +10,7 @@ body {
 header {
   padding: 60px 20px;
   text-align: center;
-  background: radial-gradient(circle, #000 0%, #111 100%),
-              url('https://cdn.pixabay.com/photo/2020/04/04/06/04/texture-5009849_1280.jpg') center center / cover;
-  box-shadow: 0 0 60px 30px #FFD700;
+  background: #111;
   border-bottom: 5px solid #FFD700;
 }
 
@@ -20,16 +18,14 @@ header .hero img {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  border: 5px solid #FFD700;
   margin-bottom: 20px;
-  box-shadow: 0 0 30px 10px #FFD700;
+  border: 5px solid #FFD700;
 }
 
 header .hero h1 {
   color: #FFD700;
   font-size: 4rem;
   margin-bottom: 20px;
-  text-shadow: 0 0 20px #FFD700;
 }
 
 header .hero p {
@@ -48,7 +44,6 @@ section h2 {
   margin-bottom: 40px;
   font-size: 2.5rem;
   text-align: center;
-  text-shadow: 0 0 10px #FFD700;
 }
 
 .grid {
@@ -57,51 +52,47 @@ section h2 {
   gap: 30px;
 }
 
-.card {
+
+  .card {
   background: #111;
   padding: 30px;
   border-radius: 20px;
-  transition: transform 0.4s, box-shadow 0.4s;
-  box-shadow: 0 0 15px 5px #000;
   border: 1px solid #FFD700;
+  transition: transform 0.4s, box-shadow 0.4s;
+  box-shadow: -10px 0 20px -5px #000, 10px 0 20px -5px #000;
   position: relative;
-  overflow: hidden;
+  animation: yellowGlow 3s ease-in-out infinite;
+}
+@keyframes yellowGlow {
+  0%, 100% {
+    box-shadow: -10px 0 20px -5px #FFD700, 10px 0 20px -5px #FFD700;
+  }
+  50% {
+    box-shadow: -10px 0 30px 0 #FFD700, 10px 0 30px 0 #FFD700;
+  }
 }
 
-.card::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, #FFD700 10%, transparent 60%);
-  transform: translate(0, 0);
-  z-index: 0;
-  transition: transform 0.4s ease;
+.card:hover {
+  transform: translateY(-10px);
+}
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: -10px 0 30px -5px #000, 10px 0 30px -5px #000;
 }
 
-.card:hover::before {
-  transform: translate(50%, 50%) scale(0.5);
-}
 
 .card h3 {
   color: #FFD700;
   margin-bottom: 15px;
   font-size: 1.5rem;
-  position: relative;
-  z-index: 1;
 }
 
 .card p {
   color: #ccc;
-  position: relative;
-  z-index: 1;
 }
 
 .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 50px 10px #FFD700;
 }
 
 ul {
@@ -130,6 +121,5 @@ footer {
   text-align: center;
   padding: 20px;
   color: #FFD700;
-  background: #000;
-  box-shadow: 0 0 20px 5px #FFD700;
+  background: #111;
 }
